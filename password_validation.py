@@ -36,24 +36,30 @@ def pencarian_huruf(password, cari): #teknik rekursif
 def cek_simbol(password):
    sym = "~!@#$%^&*()_{}'|:;"
    lists_sym = create_lists(sym)
+   check = False
    for simbol in range(len(lists_sym)):
-      if pencarian_huruf(password, lists_sym[simbol]) == True:
-         return True
+      if pencarian_huruf(password, lists_sym[simbol]) != check:
+         check = True
+   return check
 
 def cek_kata(password):
    words = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz "
    lists_wrd = create_lists(words)
+   check = False
    for word in range(len(lists_wrd)):
-      if pencarian_huruf(password, lists_wrd[word]) == True:
-         return True
+      if pencarian_huruf(password, lists_wrd[word]) != check:
+         check = True
+   return check
          
 
 def cek_angka(password):
    numbers = "0123456789"
    list_num = create_lists(numbers)
+   check = False
    for angka in range(len(list_num)):
-      if pencarian_huruf(password, list_num[angka]) == True:
-         return True
+      if pencarian_huruf(password, list_num[angka]) != check:
+         check = True
+   return check
 
 def program_utama():
    ulang = False
