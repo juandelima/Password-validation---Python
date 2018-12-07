@@ -62,12 +62,11 @@ def cek_angka(password):
    return check
 
 def program_utama():
-   ulang = False
-   while not ulang:
+   while True:
       password = input("Masukkan Password : ")
       if len(password) < 6:
          print("Panjang password harus lebih dari 6!")
-         ulang = False
+         continue
       else:
          if (cek_kata(password) or cek_simbol(password)) and cek_angka(password):
             print("Password Valid!")
@@ -76,7 +75,7 @@ def program_utama():
                continue
             else:
                if coba == 'N' or coba == 'n':
-                  ulang = True
+                  break
          else:
             print("Password Tidak Valid!")
 
