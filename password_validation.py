@@ -73,7 +73,7 @@ def program_utama():
             print("Password Valid!")
             coba = input("Ulangi Program ? Y/N : ")
             if coba == 'Y' or coba == 'y':
-               ulang = False
+               continue
             else:
                if coba == 'N' or coba == 'n':
                   ulang = True
