@@ -8,19 +8,19 @@ def create_lists(kata):
          new_arr.append(huruf)
    return new_arr
 
-def sorting_kata(password): 
+def sorting_huruf(password): 
    arr = create_lists(password)
    for index in range(1, len(password)):
       current_word = arr[index]
-      index_kata = index
-      while index_kata > 0 and arr[index_kata - 1] > current_word:
-         arr[index_kata] = arr[index_kata - 1]
-         index_kata -= 1
-      arr[index_kata] = current_word
+      index_huruf = index
+      while index_huruf > 0 and arr[index_huruf - 1] > current_word:
+         arr[index_huruf] = arr[index_huruf - 1]
+         index_huruf -= 1
+      arr[index_huruf] = current_word
    return arr
       
 def pencarian_huruf(password, cari): #teknik rekursif
-   arr = sorting_kata(password)
+   arr = sorting_huruf(password)
    if len(arr) == 0:
       return False
    else:
