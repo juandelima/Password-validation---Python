@@ -33,15 +33,6 @@ def pencarian_huruf(password, cari): #teknik rekursif
          else:
             return pencarian_huruf(arr[split_word + 1:], cari)
 
-def cek_simbol(password):
-   sym = "~!@#$%^&*()_{}'|:;"
-   lists_sym = create_lists(sym)
-   check = False
-   for simbol in range(len(lists_sym)):
-      if pencarian_huruf(password, lists_sym[simbol]) != check:
-         check = True
-   return check
-
 def cek_kata(password):
    words = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz "
    lists_wrd = create_lists(words)
@@ -51,7 +42,6 @@ def cek_kata(password):
          check = True
    return check
          
-
 def cek_angka(password):
    numbers = "0123456789"
    list_num = create_lists(numbers)
@@ -68,7 +58,7 @@ def program_utama():
          print("Panjang password harus lebih dari 6!")
          continue
       else:
-         if (cek_kata(password) or cek_simbol(password)) and cek_angka(password):
+         if cek_kata(password) and cek_angka(password):
             print("Password Valid!")
             coba = input("Ulangi Program ? Y/N : ")
             if coba == 'Y' or coba == 'y':
@@ -78,7 +68,6 @@ def program_utama():
                   break
          else:
             print("Password Tidak Valid!")
-
 
 program_utama()
 
